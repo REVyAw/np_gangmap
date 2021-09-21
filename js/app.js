@@ -144,13 +144,19 @@ $(function() {
 
 	var categories = window.cats = new CategoriesCollection([
 		{
-			name: 'Territory Areas',
+			name: 'Gangs',
 			icon: 'Einstellungen/wall-breach.png',
 			type: 'Einstellungen',
 			enabled: true
 		},
 		{
-			name: 'Neutral Zones',
+			name: 'Biker',
+			icon: 'Einstellungen/wall-breach.png',
+			type: 'Einstellungen',
+			enabled: true
+		},
+		{
+			name: 'Sonstiges',
 			icon: 'Einstellungen/wall-breach.png',
 			type: 'Einstellungen',
 			enabled: true
@@ -266,7 +272,7 @@ $(function() {
 
 		initialize: function() {
 			this.mapType = 'Atlas';
-			this.mapDetails = { 'Atlas': '#0fa8d2', 'Satellite': '#143d6b', 'Road': '#1862ad', 'Postal Code': '#143d6b' };
+			this.mapDetails = { 'Atlas': '#0fa8d2', 'Satellite': '#143d6b', 'Road': '#1862ad', 'Postalcode': '#0fa8d2' };
 			this.mapOptions = {
 				center: new google.maps.LatLng(66, -125),
 				zoom: 5,
@@ -373,7 +379,7 @@ $(function() {
 			if ( ! coord) {
 				return null;
 			}
-			return assetsUrl() + 'tiles/' + this.mapType.toLowerCase() + '/' + zoomLevel + '_' + coord.x + '_' + coord.y + '.png';
+			return assetsUrl() + 'tiles/' + this.mapType.toLowerCase() + '/' + zoomLevel + '-' + coord.x + '_' + coord.y + '.png';
 		},
 
 		normalizeCoordinates: function(coord, zoom) {
